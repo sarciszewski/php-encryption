@@ -16,10 +16,10 @@ echo "    mb_internal_encoding(): " . mb_internal_encoding() . "\n";
 // Perform the tests.
 require_once('Crypto.php');
 try {
-    Crypto::RuntimeTest();
+    \Defuse\Crypto\Crypto::RuntimeTest();
     echo "TEST PASSED!\n";
     exit(0);
-} catch (CryptoTestFailedException $ex) {
+} catch (\Defuse\Crypto\CryptoTestFailedException $ex) {
     echo "TEST FAILED!\n";
     var_dump($ex);
     exit(1);
